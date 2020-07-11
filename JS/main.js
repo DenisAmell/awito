@@ -96,12 +96,12 @@ modlalFileInput.addEventListener('change', event => {
 	reader.readAsBinaryString(file);
 
 	reader.addEventListener('load', event => {
-		if (infoPhoto.size < 200000){
+		if (infoPhoto.size < 2000000){
 			modalFileBtn.textContent = infoPhoto.filename;
 			infoPhoto.base64 = btoa(event.target.result);
 			modalImageAdd.src = `data:image/jpeg;base64,${infoPhoto.base64}`;
 		}else{
-			modalFileBtn.textContent = 'файл не должен превышать 200Кб';
+			modalFileBtn.textContent = 'файл не должен превышать 200Мб';
 			modalFileBtn.value = '';
 			checkForm();
 		}
